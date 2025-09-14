@@ -1,0 +1,141 @@
+/* Base */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+/* Center everything */
+.auth-bg, .notes-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Gradient backgrounds */
+.auth-bg {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+}
+.notes-bg {
+  background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+}
+
+/* Glass card effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Inputs & textarea */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 15px;
+}
+textarea { resize: none; height: 80px; }
+
+/* Brighter placeholder */
+::placeholder { color: rgba(255,255,255,0.9); }
+
+/* Buttons */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #ff512f 0%, #dd2476 100%);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: linear-gradient(135deg, #dd2476 0%, #ff512f 100%);
+}
+
+/* Titles */
+.title { font-size: 28px; margin-bottom: 20px; }
+
+/* Error text */
+.error { color: #ffb3b3; font-size: 14px; min-height: 18px; }
+
+/* Switch link */
+.switch-link { margin-top: 10px; }
+
+/* Notes list styling (center cards, but left-align content for readability) */
+.notes-container { width: 90%; max-width: 600px; margin: 0 auto; text-align: center; }
+.notes-list {
+  list-style: none;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+/* Note card */
+.notes-list li {
+  background: rgba(255,255,255,0.2);
+  width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  text-align: left;
+  color: #fff;
+}
+
+/* Title and body should wrap and preserve newlines */
+.notes-list li strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  overflow-wrap: anywhere;     
+  word-break: break-word;       
+}
+
+.notes-list li p {
+  margin: 0;
+  white-space: pre-wrap;       
+  overflow-wrap: anywhere;     
+  word-break: break-word;
+  color: rgba(255,255,255,0.95);
+  line-height: 1.35;
+}
+
+/* Action buttons */
+.note-actions { margin-top: 8px; text-align: right; }
+.note-actions button {
+  padding: 8px 12px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+.note-actions .edit-btn { background: #ffc107; color: #000; }
+.note-actions .delete-btn { background: #ff4d4d; color: #fff; }
+.note-actions .edit-btn:hover { background: #e0a800; }
+.note-actions .delete-btn:hover { background: #e63939; }
+
+/* Logout button */
+.logout-btn { background: #444; margin-bottom: 10px; }
+.logout-btn:hover { background: #333; }
+
+/* Form block alignment */
+.form-block { display: flex; flex-direction: column; align-items: center; }
