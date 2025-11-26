@@ -9,7 +9,7 @@ import DeleteNote from "./Delete/DeleteNote";
 import Search from "../Search/Search";
 import "./Notes.css";
 
-const API_URL = "http://localhost:8080/notes";
+const API_URL = `${import.meta.env.VITE_API_URL}/notes`;
 
 const Notes = () => {
   const { token } = useContext(AuthContext);
