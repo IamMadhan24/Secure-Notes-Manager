@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@utility notes-container {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mx-5 mb-5 mt-10;
+}
+
+@utility note-container {
+  @apply bg-white/20 rounded-2xl p-6 hover:bg-white/30 shadow-lg note-content whitespace-pre-wrap break-words
+           flex flex-col justify-between h-auto min-h-fit;
+}
+
+@utility note-title {
+  @apply text-xl font-semibold text-white;
+}
+
+@utility note-content {
+  @apply text-white/60;
+}
+
+@utility note-btns {
+  @apply text-white flex justify-center gap-3 mt-3;
+}
+
+@utility note-btn {
+  @apply px-4 py-1 cursor-pointer rounded-2xl text-black hover:shadow-lg;
+}
+
+@utility add-btn {
+  @apply bg-black/80 text-white text-2xl rounded-full w-12 h-12 fixed 
+           bottom-5 right-5 sm:bottom-8 sm:right-8 lg:bottom-10 lg:right-10 
+           cursor-pointer hover:scale-110 transition;
+}
+
+@utility create-btn {
+  @apply bg-black text-white text-lg sm:text-xl rounded-2xl fixed cursor-pointer 
+           px-5 sm:px-6 py-1 
+           bottom-20 right-5 sm:bottom-24 sm:right-8 lg:bottom-28 lg:right-10 
+           hover:scale-105 hover:shadow-lg transition duration-200;
+}
+
+@utility modal-container {
+  @apply fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm;
+}
+
+@utility modal-card-container {
+  @apply bg-white rounded-2xl p-6 w-[90%] sm:w-[400px] relative shadow-lg;
+}
+
+@utility modal-close-btn {
+  @apply absolute top-3 right-5 text-red-600 hover:text-black text-xl cursor-pointer;
+}
+
+@utility modal-note-title {
+  @apply border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-black/50;
+}
+
+@utility modal-note-description {
+  @apply border border-gray-300 rounded-lg p-2 resize-none focus:outline-none focus:ring-2 focus:ring-black/50;
+}
+
+@utility modal-submit {
+  @apply bg-black text-white rounded-xl py-2 hover:scale-105 hover:shadow-md transition;
+}

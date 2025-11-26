@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/* Dashboard theme background */
+@layer base {
+  body {
+    font-family: sans-serif;
+    background: linear-gradient(to bottom right, #6366f1, #a855f7, #ec4899);
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+/* Center container */
+@utility auth-container {
+  @apply flex justify-center items-center min-h-screen px-4;
+}
+
+/* Login/Signup card */
+@utility auth-card {
+  @apply bg-white/20 backdrop-blur-xl rounded-2xl p-8 shadow-xl
+         w-full max-w-sm text-white border border-white/20
+         flex flex-col gap-4;
+}
+
+/* Inputs */
+@utility auth-input {
+  @apply w-full p-3 rounded-xl bg-white/10 text-white
+         placeholder-white/60 border border-white/20
+         focus:outline-none focus:ring-2 focus:ring-white/60;
+}
+
+/* Buttons */
+@utility auth-btn {
+  @apply w-full bg-black/70 text-white py-3 rounded-xl
+         hover:bg-black hover:scale-105 transition shadow-lg;
+}
+
+/* Link */
+@utility auth-link {
+  @apply text-white underline cursor-pointer hover:text-white/80;
+}
