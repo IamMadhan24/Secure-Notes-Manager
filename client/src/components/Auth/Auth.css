@@ -1,16 +1,5 @@
 @import "tailwindcss";
 
-/* Dashboard theme background */
-@layer base {
-  body {
-    font-family: sans-serif;
-    background: linear-gradient(to bottom right, #6366f1, #a855f7, #ec4899);
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-}
-
 /* Center container */
 @utility auth-container {
   @apply flex justify-center items-center min-h-screen px-4;

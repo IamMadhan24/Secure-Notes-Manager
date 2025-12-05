@@ -4,14 +4,13 @@ import PrivateRoute from "./routes/PrivateRoute";
 
 import Login from "./components/Auth/Login";
 import Signup from "./components/Auth/Signup";
-import Dashboard from "./components/Dashboard/Dashboard";
+import Dashboard from "./page/Dashboard";
 
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-
           {/* PUBLIC */}
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />

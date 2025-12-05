@@ -1,13 +1,12 @@
-import "./Search.css";
-
 const Search = ({ searchTerm, onSearch }) => {
   return (
-    <div className="form-container">
-      <form className="search-container" onSubmit={(e) => e.preventDefault()}>
+    <div className="mx-4">
+      <form className="flex justify-between bg-white/20 rounded-full shadow-lg overflow-hidden w-full max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
         <input
           type="text"
           placeholder="Search notes..."
-          className="search"
+          className="w-full px-4 py-3 text-white focus:outline-none border-none mx-2
+         max-sm:p-2"
           value={searchTerm}
           onChange={(e) => onSearch(e.target.value)}
         />
@@ -15,7 +14,8 @@ const Search = ({ searchTerm, onSearch }) => {
         {searchTerm && (
           <button
             type="button"
-            className="search-btn"
+            className="px-6 py-3 text-white bg-white/30 font-medium cursor-pointer hover:bg-white/40 transition
+         max-sm:px-3 max-sm:py-2 max-sm:text-sm"
             onClick={() => onSearch("")}
           >
             ✕

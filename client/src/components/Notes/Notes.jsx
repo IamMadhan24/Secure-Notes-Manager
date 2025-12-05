@@ -52,16 +52,25 @@ const Notes = () => {
     loadNotes();
   }, []);
 
-  // TRUNCATE TEXT HELPER
-  function truncate(text, limit) {
-    return text.length <= limit ? text : text.substring(0, limit) + "...";
-  }
+    function truncate(text, limit) {
+      if (!text) return "";
+      let cleaned = text.split("\n").join(" ");
+
+      cleaned = cleaned.replaceAll("  ", " ").trim();
+
+      if (cleaned.length > limit) {
+        return cleaned.substring(0, limit) + "...";
+      }
+
+      return cleaned;
+    }
+
 
   const filteredNotes = notes.filter((note) =>
     note.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // CREATE (POST)
+  // CREATE 
   async function handleAddNote(newNote) {
     await fetch(API_URL, {
       method: "POST",
@@ -120,7 +129,6 @@ const Notes = () => {
     loadNotes();
   }
 
-  // FLOATING CREATE BUTTON
   function handleAddClickBtn(e) {
     e.stopPropagation();
     setShowCreateBtn(!showCreateBtn);
@@ -137,7 +145,6 @@ const Notes = () => {
     return () => document.removeEventListener("click", handleOutsideClick);
   }, [showCreateBtn]);
 
-   // UI RENDER
   return (
     <>
       {/* Search Input */}
@@ -147,7 +154,7 @@ const Notes = () => {
       {notes.length === 0 && (
         <div className="w-full flex flex-col items-center justify-center text-center text-white/80 mt-20 sm:mt-24 md:mt-32 px-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
-            Welcome to Notevue 👋
+            Welcome to Secure Notes Manager
           </h2>
 
           <p className="text-base sm:text-lg md:text-xl max-w-xl">
